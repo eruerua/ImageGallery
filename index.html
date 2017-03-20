@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Gallery</title>
+</head>
+<body>
+	<h1>Snapshots</h1>
+	<ul>
+		<li>
+			<a href="images/fry.jpg">fry</a>
+		</li>
+		<li>
+			<a href="images/proj1.gif">proj1</a>
+		</li>
+		<li>
+			<a href="images/proj2.gif">proj2</a>
+		</li>
+		<li>
+			<a href="images/proj3.gif">proj3</a>
+		</li>
+	</ul>
+	<img id="placeholder" src="images/placehold.gif" alt="image gallery">
+	<script>
+		function showPic(whichpic) {
+			var source = whichpic.getAttribute("href");
+			var placeholder = document.getElementById("placeholder");
+			placeholder.setAttribute("src",source);
+		}
+
+	</script>
+</body>
+</html>
