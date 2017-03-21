@@ -3,30 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Image Gallery</title>
+	<link rel="stylesheet" href="styles/layout.css">
 </head>
 <body>
 	<h1>Snapshots</h1>
 	<ul>
 		<li>
-			<a href="images/fry.jpg">fry</a>
+			<a href="images/fry.jpg" onclick="showPic(this); return false;" title="fry">fry</a>
 		</li>
 		<li>
-			<a href="images/proj1.gif">proj1</a>
+			<a href="images/proj1.gif" onclick="showPic(this); return false;" title="proj1">proj1</a>
 		</li>
 		<li>
-			<a href="images/proj2.gif">proj2</a>
+			<a href="images/proj2.gif" onclick="showPic(this); return false;" title="proj2">proj2</a>
 		</li>
 		<li>
-			<a href="images/proj3.gif">proj3</a>
+			<a href="images/proj3.gif" onclick="showPic(this); return false;" title="proj3">proj3</a>
 		</li>
 	</ul>
 	<img id="placeholder" src="images/placehold.gif" alt="image gallery">
+	<p id="description">Choose an image</p>
 	<script>
 		function showPic(whichpic) {
 			var source = whichpic.getAttribute("href");
 			var placeholder = document.getElementById("placeholder");
 			placeholder.setAttribute("src",source);
+			var text = whichpic.getAttribute("title");
+			var description = document.getElementById("description");
+			// alert(description.firstChild.nodeValue);
+			description.firstChild.nodeValue = text;
 		}
+
+		function countBodyChildren() {
+			var body_element = document.getElementsByTagName("body")[0];
+			alert(body_element.childNodes.length);
+		}
+
+		// window.onload = countBodyChildren;
+
 
 	</script>
 </body>
